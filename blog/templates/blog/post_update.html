@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Post Update    
+{% endblock title %}
+
+{% block body %}
+
+
+{% load crispy_forms_tags %}
+<div class="form">
+    <h2>POST Update</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form2|crispy }}
+        <input type="submit" value="Update">
+    </form>
+</div>
+    
+{% endblock body %}
+    

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Post Delete    
+{% endblock title %}
+
+
+{% block body %}
+
+<div class="form">
+    <h2>POST DELETE</h2>
+
+<div>
+    <form action="" method="post">
+        <p style="width:100%">Are You Sure! Do you want to delete <span style="color:red">{{form_post}}</span>?</p>
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
+    <a href="{% url 'list' %}">
+        <button style="margin:1rem">NO</button>
+    </a>
+</div>
+</div>
+
+    
+{% endblock body %}
+    

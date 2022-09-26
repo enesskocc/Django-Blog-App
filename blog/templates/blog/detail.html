@@ -1,0 +1,55 @@
+
+{% extends 'base.html' %}
+  
+{% block body %}
+  
+
+
+<div  class="container mt-4">
+<div class="row g-4 d-flex flex-wrap justify-content-center">
+<h2 class="text-center">Form Details</h2>
+
+
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class=" card mx-4" style="width: 18rem;">
+      <img src="{{post.image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+        <p class="card-text"> Posted- <small> {{post.publish_date|timesince }} ago </small></p>
+        <p class="card-text">Updated- <small> {{post.last_updated|timesince }} ago </small></p>
+        {% load crispy_forms_tags %}
+        <form action="" method='post'>
+            {% csrf_token %}
+           {{form_comment | crispy}}
+        <button type="submit" class="btn btn-outline-success mt-4">SEND</button>
+        </form>
+        
+        {% for i in post_comment  %}
+
+        <p>Comment by {{i.user }} - <small> {{post.publish_date|timesince }} ago </small></p>
+        <p>{{i.content}}</p>
+        
+            
+        {% endfor %}
+            
+      
+      </div>
+        
+      
+    </div>
+    {% if request.user == post.user %}
+    <a href="{% url 'update' post.id %}"><button class="btn btn-outline-success mt-4">EDIT</button></a>
+    <a href="{% url 'delete' post.id %}"><button class="btn btn-outline-danger mt-4">DELETE</button></a>
+      
+    {% endif %} 
+    </div>
+
+
+
+</div>
+</div>
+
+{% endblock body %}
+  
+  

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+
+<h2 class="m-5">You have been loged out!</h2>
+    
+<a class="btn btn-dark ms-5" href="{% url 'user_login' %}">Log in Again</a>
+{% endblock body %}
+
+
+    

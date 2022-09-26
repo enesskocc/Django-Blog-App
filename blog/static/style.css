@@ -1,0 +1,53 @@
+#warning {
+    background-color: lightcoral;
+    color: aliceblue;
+    margin: auto;
+    width: 40%;
+    height: 30%;
+    text-align: center;
+}
+#success {
+    background-color: darkseagreen ;
+    color:rgb(231, 200, 158);
+    margin: auto;
+    width: 40%;
+    height: 30%;
+    text-align: center;
+}
+
+.form{
+    width: 100%;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+h2{
+    color: red;
+    display: block;
+
+}
+
+form{
+    width: 50%;
+}
+
+input{
+    margin-top: 2rem;
+}
+
+
+
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__480.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.deneme{
+    color: yellow;
+}
+
+textarea { max-width: 100%}
